@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Timers;
 
-public class You : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+
     public static int maxHealth = 10000;
     public static int currentHealth;
-    public HealthBar healthBar;
-    int minimaldamage = 50;
-    int maximaldamage = 150;
+    public EnemyHealthBar healthBar;
+    int minimaldamage = 100;
+    int maximaldamage = 200;
     public float period = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -33,9 +32,9 @@ public class You : MonoBehaviour
 
     }
     int TakeDamage()
-    {
-        int damage = Random.Range(minimaldamage, maximaldamage);
-        currentHealth -= damage;
-        return (currentHealth);
-    }
+         {
+             int damage = Random.Range(minimaldamage, maximaldamage);
+             currentHealth -= damage;
+             return (currentHealth);
+         }
 }
